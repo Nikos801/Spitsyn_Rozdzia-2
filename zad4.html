@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spitsyn Nikita 3-K</title>
+</head>
+<body>
+    <h1>Informacje o JavaScript(Spitsyn Nikita 3-K)</h1>
+
+    <h2>1. Kiedy powstał JavaScript?</h2>
+    <p>JavaScript powstał w grudniu 1995 roku.</p>
+
+    <h2>2. Dlaczego jest to język skryptowy?</h2>
+    <p>JavaScript jest językiem skryptowym, ponieważ jest interpretowany i wykonywany bezpośrednio w przeglądarce, bez potrzeby kompilacji.</p>
+
+    <h2>3. Gdzie jest wykonywany JavaScript (klient lub serwer)?</h2>
+    <p>JavaScript może być wykonywany zarówno po stronie klienta (w przeglądarce), jak i po stronie serwera (np. z użyciem Node.js).</p>
+
+    <h2>4. Dlaczego JavaScript to bezpieczne narzędzie?</h2>
+    <p>JavaScript jest stosunkowo bezpieczny dzięki izolacji w tzw. "sandboxie" przeglądarki, ograniczając dostęp do zasobów lokalnych użytkownika.</p>
+
+    <h2>5. Czy jest to język obiektowy, jeśli tak, to dlaczego?</h2>
+    <p>Tak, JavaScript jest językiem obiektowym, ponieważ umożliwia tworzenie obiektów z właściwościami i metodami oraz wspiera programowanie prototypowe.</p>
+
+    <h2>6. Zalety JavaScript</h2>
+    <ul>
+        <li>Wykonuje się bezpośrednio w przeglądarce, co umożliwia szybkie interakcje.</li>
+        <li>Jest wszechstronny i może działać po stronie klienta oraz serwera.</li>
+        <li>Ma szerokie wsparcie społeczności, co ułatwia rozwój aplikacji.</li>
+    </ul>
+
+    <h2>7. Framework to:</h2>
+    <p>Framework to zestaw narzędzi i bibliotek ułatwiający tworzenie aplikacji poprzez strukturyzację kodu i uproszczenie pracy programisty.</p>
+
+    <h2>8. Do aplikacji mobilnych można użyć Framework</h2>
+    <p>Tak, można użyć frameworków takich jak React Native, Ionic czy NativeScript.</p>
+
+    <h2>9. Aplikacje responsywne to:</h2>
+    <p>Aplikacje, które dostosowują się do różnych rozmiarów ekranów, zapewniając wygodne korzystanie na różnych urządzeniach.</p>
+
+    <h2>10. Przykład kodu z przyciskiem otwierającym nowe okno:</h2>
+    <input type="button" name="przycisk" value="Nowa Strona" onclick="WinOpen('obraz.html')">
+    <p>Ten przycisk otwiera nowe okno z wybranym adresem (w tym przypadku <em>obraz.html</em>), pod warunkiem, że funkcja <code>WinOpen()</code> jest wcześniej zdefiniowana.</p>
+
+    <script>
+        function WinOpen(url) {
+            window.open(url, "noweOkno", "toolbar=no,directories=no,menubar=no,height=280,width=160,top=200,left=200");
+        }
+    </script>
+
+    <h2>11. Przykład kodu otwierającego okno za pomocą <code>window.open</code>:</h2>
+    <pre>
+        window.open("obraz.html","okienko","toolbar=no,directories=no,menubar=no,height=280,width=160,top=200,left=200");
+    </pre>
+    <p>Ten kod otwiera nowe okno o nazwie <em>okienko</em> z wyłączonym paskiem narzędzi i menu, w rozmiarze 280x160 pikseli.</p>
+
+    <h2>12. Instrukcja <code>window.close()</code>:</h2>
+    <p>Instrukcja <code>window.close()</code> zamyka aktualne okno lub zakładkę przeglądarki, jeśli zostało otwarte przez JavaScript.</p>
+
+    <button onclick="window.close()">Zamknij to okno</button>
+
+</body>
+</html>
