@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spitsyn Nikita 3-K</title>
+</head>
+<body>
+    <h1>Informacje o JavaScript(Spitsyn Nikita 3-K)</h1>
+
+    <h2>1) Rodzaje okienek
+    </h2>
+    <p>alert: Wyświetla komunikat informacyjny. Blokuje interakcję do czasu zamknięcia.
+        javascript
+        
+        alert("To jest alert!");
+
+        confirm: Wyświetla komunikat z opcjami „OK” i „Anuluj”. Zwraca true lub false.
+        javascript
+       
+        let decyzja = confirm("Kontynuować?");
+
+        prompt: Pobiera dane tekstowe od użytkownika.
+        javascript
+        
+        let imie = prompt("Jak masz na imię?");</p>
+
+    <h2>Konwersji liczb</h2>
+    <p>JJawna konwersja:
+        Number(): Przekształca tekst na liczbę.
+        javascript
+        
+        Number("123"); // 123
+        parseInt(), parseFloat(): Zamienia tekst na liczbę całkowitą lub zmiennoprzecinkową.
+        javascript
+        
+        parseFloat("123.45"); // 123.45
+        Niejawna konwersja: Dokonywana automatycznie, np.:
+        javascript
+        
+        "123" * 2; // 246
+        </p>
+
+    <h2>3)Przy nadawaniu nazw zmiennym należy przestrzegać pewnych zasad:</h2>
+    <p>Nazwa musi zaczynać się od litery, _ lub $.
+        Nie może zawierać spacji ani znaków specjalnych.
+        Nie może być słowem zarezerwowanym, np. let, if.
+        </p>
+
+    <h2>4) Typy zmiennych w JavaScript</h2>
+    <p>let: Zmienna o zasięgu blokowym, można ją zmieniać.
+        const: Stała, nie można zmienić jej wartości.
+        var: Starszy sposób deklarowania, ma zasięg funkcyjny.</p>
+
+    
+    <button onclick="window.close()">Zamknij to okno</button>
+
+</body>
+</html>

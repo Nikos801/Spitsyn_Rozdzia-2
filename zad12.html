@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ile sekund</title>
+    <style>
+        body {
+            font-size: calc(30px + 15px); /* Zmień 15 na numer dnia urodzenia */
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ile sekund</h1>
+    <button onclick="obliczSekundy()">Podaj dane i oblicz sekundy</button>
+    <p id="wynik"></p>
+
+    <script>
+        function obliczSekundy() {
+            // Wczytywanie danych z użyciem prompt
+            const d1_nik = parseInt(prompt("Podaj dzień D1 (1-31):"));
+            const g1_nik = parseInt(prompt("Podaj godzinę G1 (1-24):"));
+            const d2_nik = parseInt(prompt("Podaj dzień D2 (1-31):"));
+            const g2_nik = parseInt(prompt("Podaj godzinę G2 (1-24):"));
+
+            // Sprawdzenie podstawowych warunków
+            if (d1_nik >= d2_nik && d1_nik >= 1 && d1_nik <= 31 && d2_nik >= 1 && d2_nik <= 31 && 
+            g1_nik >= 1 && g1_nik <= 24 && g2_nik >= 1 && g2_nik <= 24) {
+
+                // Obliczenia różnicy w dniach i godzinach
+                const dniNaSekundy = (d1_nik - d2_nik) * 24 * 60 * 60;
+                const godzinyNaSekundy = (g1_nik - g2_nik) * 60 * 60;
+                const sekundy = dniNaSekundy + godzinyNaSekundy;
+
+                // Wyświetlanie wyniku
+                document.getElementById("wynik").innerText = `Ilość sekund: ${sekundy} sekund`;
+            } else {
+                // Obsługa błędnych danych
+                document.getElementById("wynik").innerText = "Dane są nieprawidłowe. Upewnij się, że: D1 >= D2, 1 <= D1,D2 <= 31, 1 <= G1,G2 <= 24.";
+            }
+        }
+    </script>
+</body>
+</html>

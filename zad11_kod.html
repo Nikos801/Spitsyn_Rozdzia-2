@@ -1,0 +1,57 @@
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+21
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="20" readonly>
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ile sekund</title>
+        <style>
+            body {
+                font-size: calc(30px + 15px); 
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Ile sekund</h1>
+        <button onclick="obliczSekundy()">Podaj dni i oblicz sekundy</button>
+        <p id="wynik"></p>
+    
+        <script>
+            function obliczSekundy() {
+                
+                const d1_nik = parseInt(prompt("Podaj dzień 1 :"));
+                const d2_nik = parseInt(prompt("Podaj dzień 2 :"));
+    
+                
+                if (d1_nik >= d2_nik && d1_nik >= 1 && d1_nik <= 31 && d2_nik >= 1 && d2_nik <= 31) {
+                    const sekundy = (d1_nik - d2_nik) * 24 * 60 * 60; 
+                    document.getElementById("wynik").innerText = `Ilość sekund: ${sekundy} sekund`;
+                } else {
+                    document.getElementById("wynik").innerText = "Dane są nieprawidłowe. Upewnij się, że D1 >= D2 oraz 1 <= D1, D2 <= 31.";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
+
+ </textarea>
+</form>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_siejka()"/>
+<script type="text/javascript">
+</script>
+</body>
+</html>
