@@ -1,0 +1,77 @@
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+21
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="20" readonly>
+  <!DOCTYPE html>
+  <html lang="pl">
+  <head>
+      <meta charset="utf-8">
+      <title>Obliczanie długości boków trójkąta(Spitsyn)</title>
+  </head>
+  <body>
+      <h2>Wczytaj współrzędne trzech punktów</h2>
+      <form id="triangleForm">
+          <label>A(x): <input type="number" id="xa_nik" required></label>
+          <label>A(y): <input type="number" id="ya_nik" required></label><br><br>
+  
+          <label>B(x): <input type="number" id="xb_nik" required></label>
+          <label>B(y): <input type="number" id="yb_nik" required></label><br><br>
+  
+          <label>C(x): <input type="number" id="xc_nik" required></label>
+          <label>C(y): <input type="number" id="yc_nik" required></label><br><br>
+  
+          <button type="button" onclick="obliczBoki()">Oblicz długości boków</button>
+      </form>
+  
+      <h3>Wyniki:</h3>
+      <p id="wynikAB"></p>
+      <p id="wynikBC"></p>
+      <p id="wynikAC"></p>
+  
+      <script>
+          function odleglosc(x1, y1, x2, y2) {
+              return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+          }
+  
+          function obliczBoki() {
+              // Pobranie wartości z formularza
+              let xa = parseFloat(document.getElementById("xa_nik").value);
+              let ya = parseFloat(document.getElementById("ya_nik").value);
+              let xb = parseFloat(document.getElementById("xb_nik").value);
+              let yb = parseFloat(document.getElementById("yb_nik").value);
+              let xc = parseFloat(document.getElementById("xc_nik").value);
+              let yc = parseFloat(document.getElementById("yc_nik").value);
+  
+              // Obliczanie długości boków
+              let AB = odleglosc(xa, ya, xb, yb);
+              let BC = odleglosc(xb, yb, xc, yc);
+              let AC = odleglosc(xa, ya, xc, yc);
+  
+              // Wyświetlanie wyników
+              document.getElementById("wynikAB").innerText = "Długość AB = " + AB.toFixed(2);
+              document.getElementById("wynikBC").innerText = "Długość BC = " + BC.toFixed(2);
+              document.getElementById("wynikAC").innerText = "Długość AC = " + AC.toFixed(2);
+          }
+      </script>
+  </body>
+  </html>
+  
+    
+    
+
+ </textarea>
+</form>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_siejka()"/>
+<script type="text/javascript">
+</script>
+</body>
+</html>

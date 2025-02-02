@@ -1,0 +1,73 @@
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+21
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="20" readonly>
+    <html>  
+        <head>  
+        <title> 
+        Przykład obliczenia V  i  Pc walca 
+        </title> 
+        <script language="JavaScript"> 
+        function V(r,h) 
+        { 
+        r_nik=parseFloat(r) 
+        h_nik=parseFloat(h) 
+        V_nik=Math.PI*r_nik*r_nik*h_nik
+        document.getElementsByName('obj')[0].value=V_nik.toFixed(2);   /* na dokument  */ 
+        alert("V="+V_nik.toFixed(2)+" cm^3");                                                  
+        pokaz1.innerHTML="V="+V_nik.toFixed(2)+" cm^3"+"<br>";        
+        } 
+        function Pc(r,h) 
+        { 
+            r_nik=parseFloat(r) 
+            h_nik=parseFloat(h) 
+           Pc_nik=2*Math.PI*r_nik*r_nik+2*Math.PI*r_nik*h_nik
+           document.getElementsByName('pole')[0].value=Pc_nik.toFixed(2); 
+           alert("Pc="+Pc_nik.toFixed(2)+" cm^2"); 
+           pokaz2.innerHTML="Pc="+Pc_nik.toFixed(2)+"cm^2"; 
+        } 
+               </script> 
+        </head>  
+        <body>  
+         <h1>obliczanie V   i    Pc walca </h1>
+        <br> <br> 
+        <form name="formularz" action="..." onsubmit="V(this.promien.value,this.wysokosc.value); 
+        Pc(this.promien.value,this.wysokosc.value);return false">   
+             Podaj r= 
+                <input  size="6"  name="promien"> 
+             Podaj h= 
+                <input  size="6"  name="wysokosc"> 
+                               <br>   <br> 
+                 <input  TYPE="submit"  Value="oblicz" > 
+                               <br>   <br> 
+               V= 
+                   <input  size="6"  name="obj"> 
+               Pc= 
+                  <input  size="6"  name="pole"> 
+        </form> 
+        <table> 
+                      <tr id="pokaz1"></tr> 
+                      <tr id="pokaz2"></tr> 
+        </table> 
+        </body>  
+        </html> 
+  
+    
+    
+
+ </textarea>
+</form>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_siejka()"/>
+<script type="text/javascript">
+</script>
+</body>
+</html>
