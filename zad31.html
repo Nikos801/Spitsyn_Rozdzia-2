@@ -1,0 +1,59 @@
+<html>
+<head>
+<script type="text/javascript">
+
+  var router = {
+    marka: 'TP-Link',
+    model: 'Archer C6',
+    typ: 'Wi-Fi',
+    pokaz: function () {
+      document.write(this.marka + ' ' + this.model + ' ' + this.typ);
+    }
+  };
+
+  router.pokaz();
+
+ 
+  router.numerSeryjny = '12345ABC';
+
+  router.wypisz = function () {
+    alert('Numer seryjny: ' + this.numerSeryjny);
+  };
+
+  router.wypisz();
+
+  
+  router.router_pokaz_Spitsyn = function() {
+    
+  };
+
+
+  router.router_pokaz_Spitsyn();
+
+  document.write('<br>Obiekt: router<br>');
+  document.write('Pola:<br>');
+  document.write('Marka: ' + router.marka + '<br>');
+  document.write('Model: ' + router.model + '<br>');
+  document.write('Typ: ' + router.typ + '<br>');
+  document.write('Numer seryjny: ' + router.numerSeryjny + '<br>');
+  document.write('Metody:<br>');
+  document.write('Pokaz<br>');
+  document.write('Wypisz<br>');
+  document.write('router_pokaz_Spitsyn<br>');
+</script>
+</head>
+<body>
+<br>
+Programowanie obiektowe. <br>
+Obiekt to Router<br>
+Pola:<br>
+Marka<br>
+Model<br>
+Typ<br>
+Numer seryjny<br>
+Metody:<br>
+Pokaz<br>
+Wypisz<br>
+router_pokaz_Spitsyn<br>
+</body>
+</html>
