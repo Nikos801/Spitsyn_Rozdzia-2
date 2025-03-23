@@ -1,0 +1,110 @@
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+21
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="20" readonly>
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zadanie 38 - Nikita Spitsyn</title>
+        <style>
+            body {
+                background-color: silver;
+                font-family: Arial, sans-serif;
+            }
+            .menu {
+                color: red;
+                font-size: calc(40px + (var(--numer-w-dzienniku) % 7));
+            }
+            .info {
+                color: green;
+                font-size: calc(40px + (var(--numer-w-dzienniku) % 7));
+            }
+        </style>
+    </head>
+    <body>
+        <div class="info" id="info"></div>
+        <div class="menu" id="menu"></div>
+        <script>
+            
+            const imie = "Nikita";
+            const nazwisko = "Spitsyn";
+            const dzienUrodzenia = 25; 
+            const numerWDzienniku = 26; 
+    
+            
+            const liczba1 = imie.length; 
+            const liczba2 = liczba1 + 7; 
+            const liczba3 = nazwisko.length; 
+            const liczba4 = liczba3 + 4; 
+    
+            
+            document.getElementById('info').innerHTML = `
+                Moje nazwisko to: ${nazwisko} ${imie}<br>
+                liczba1 = ${liczba1}<br>
+                liczba2 = ${liczba1} + 7 = ${liczba2}<br>
+                liczba3 = ${liczba3}<br>
+                liczba4 = ${liczba3} + 4 = ${liczba4}
+            `;
+    
+            // Menu
+            document.getElementById('menu').innerHTML = `
+                <strong>MENU</strong><br>
+                ${liczba1} - wyświetlanie teorii o operatorach logicznych<br>
+                ${liczba3 + 20} - czy liczba należy do przedziału (${liczba1}; ${liczba2})<br>
+                ${dzienUrodzenia + 50} - czy liczba należy do przedziału (-∞; ${liczba3}) lub [${liczba4}; +∞)
+            `;
+    
+            // Funkcja do wyboru opcji
+            function wybierzOpcje() {
+                const opcja = parseInt(prompt("Wybierz opcję (6, 27, 75):")); // Dostosowane opcje dla Nikity Spitsyna
+    
+                if (opcja === liczba1) {
+                    document.write(`<font color="blue" size="7">Jesteś w opcji ${opcja} --> teoria</font><br>`);
+                    document.write("&& i x=3 y=4 (x < 9 && y > 2) wynik-->prawda<br>");
+                    document.write("|| lub x=3 y=4 (x==8 || y==6) wynik-->fałsz<br>");
+                    document.write("! zaprzeczenie x=3 y=4 !(x==y) wynik-->prawda<br>");
+                } else if (opcja === liczba3 + 20) {
+                    const liczba = parseInt(prompt("Podaj liczbę:"));
+                    if (liczba > liczba1 && liczba < liczba2) {
+                        document.write(`<font color="green" size="7">Liczba ${liczba} należy do przedziału (${liczba1}; ${liczba2})</font><br>`);
+                    } else {
+                        document.write(`<font color="red" size="7">Liczba ${liczba} nie należy do przedziału (${liczba1}; ${liczba2})</font><br>`);
+                    }
+                } else if (opcja === dzienUrodzenia + 50) {
+                    const liczba = parseInt(prompt("Podaj liczbę:"));
+                    if (liczba < liczba3 || liczba >= liczba4) {
+                        document.write(`<font color="green" size="7">Liczba ${liczba} należy do przedziału (-∞; ${liczba3}) lub [${liczba4}; +∞)</font><br>`);
+                    } else {
+                        document.write(`<font color="red" size="7">Liczba ${liczba} nie należy do przedziału (-∞; ${liczba3}) lub [${liczba4}; +∞)</font><br>`);
+                    }
+                } else {
+                    document.write(`<font color="red" size="7">Nie ma takiej opcji</font><br>`);
+                }
+            }
+    
+            wybierzOpcje();
+        </script>
+    </body>
+    </html>
+  
+    
+    
+
+ </textarea>
+</form>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>
