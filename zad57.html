@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczanie pierwiastków</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .result {
+            margin-bottom: 15px;
+        }
+        .page-break {
+            margin-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Obliczanie pierwiastków</h1>
+    <div id="results"></div>
+
+    <script>
+        const startNumber = 26;
+        const count = 15;
+        const resultsPerPage = 3;
+        
+        const resultsContainer = document.getElementById('results');
+        
+        for (let i = startNumber; i < startNumber + count; i++) {
+            const sqrt2 = Math.sqrt(i).toFixed(2);
+            const sqrt4 = Math.sqrt(Math.sqrt(i)).toFixed(2);
+            
+            const resultDiv = document.createElement('div');
+            resultDiv.className = 'result';
+            resultDiv.textContent = `I=${i} pierw_2(${i})=${sqrt2} pierw_4(${i})=${sqrt4}`;
+            
+            resultsContainer.appendChild(resultDiv);
+            
+            // Dodaj przerwę co 3 wyniki
+            if ((i - startNumber + 1) % resultsPerPage === 0) {
+                const pageBreak = document.createElement('div');
+                pageBreak.className = 'page-break';
+                resultsContainer.appendChild(pageBreak);
+            }
+        }
+    </script>
+</body>
+</html>

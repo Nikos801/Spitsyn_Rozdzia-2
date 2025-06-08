@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyświetlanie imienia i nazwiska</title>
+    <style>
+        .wyświetlacz {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wyświetlanie imienia i nazwiska</h1>
+    
+    <div id="wynik"></div>
+    
+    <script>
+       
+        var imie_spi = "Nikita";
+        var nazwisko_spi = "Spitsyn";
+        
+        
+        var liczba_liter_spi = nazwisko_spi.length; 
+        var ile_razy_wyswietlic_spi = (liczba_liter_spi % 4) + 10; 
+        var wielkosc_liter_spi = (liczba_liter_spi % 3) + 40 + "px"; 
+        
+        
+        document.getElementById("wynik").innerHTML += 
+            `<p class="wyświetlacz">Ilość wykonania pętli = ${ile_razy_wyswietlic_spi}</p>` +
+            `<p class="wyświetlacz">Wielkość liter = ${wielkosc_liter_spi}</p><hr>`;
+        
+        
+        for(var i_spi = 1; i_spi <= ile_razy_wyswietlic_spi; i_spi++) {
+            if(i_spi % 2 === 1) { 
+                document.getElementById("wynik").innerHTML += 
+                    `<p style="font-size: ${wielkosc_liter_spi}">${i_spi}. ${nazwisko_spi}</p>`;
+            } else { 
+                document.getElementById("wynik").innerHTML += 
+                    `<p style="font-size: ${wielkosc_liter_spi}">${i_spi}. ${imie_spi}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

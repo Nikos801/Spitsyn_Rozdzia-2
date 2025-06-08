@@ -1,0 +1,104 @@
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+21
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="20" readonly>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczanie silni</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #wynik {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Obliczanie silni</h1>
+    
+    <div>
+        <label for="n_nik">Podaj liczbę n:</label>
+        <input type="number" id="n_nik" min="0" step="1">
+    </div>
+    
+    <button onclick="obliczSilnie()">Oblicz silnię</button>
+    
+    <div id="wynik"></div>
+    
+    <script>
+        function obliczSilnie() {
+            
+            var n_nik = parseInt(document.getElementById("n_nik").value);
+            
+           
+            var silnia_nik = 1;
+            
+           
+            if (n_nik < 0) {
+                document.getElementById("wynik").innerHTML = 
+                    "Silnia jest zdefiniowana tylko dla liczb naturalnych (n ≥ 0)";
+                return;
+            }
+            
+           
+            if (n_nik === 0) {
+                
+                silnia_nik = 1;
+            } else {
+                
+                for (var i_nik = 1; i_nik <= n_nik; i_nik++) {
+                    silnia_nik *= i_nik;
+                }
+            }
+            
+            
+            document.getElementById("wynik").innerHTML = 
+                `n = ${n_nik}<br>${n_nik}! = ${silnia_nik}`;
+        }
+    </script>
+</body>
+</html>
+
+ </textarea>
+</form>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

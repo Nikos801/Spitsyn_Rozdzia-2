@@ -1,0 +1,112 @@
+<html>
+<head>
+ <script type="text/javascript">
+ function okno_zamknij_siejka()
+ {
+ window.close()
+ }
+21
+ </script>
+</head>
+<body>
+ <form>
+ <textarea name="siejka" cols="80" rows="20" readonly>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikita Spitsyn - Zadanie48</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .wynik {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .math {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zadanie 48 - Suma szeregu harmonicznego</h1>
+    <h2>Nikita Spitsyn</h2>
+    
+    <div id="obliczenia">
+        <h3>Obliczanie sumy szeregu harmonicznego od 1 do 1,000,000</h3>
+        <p>Szereg harmoniczny: <span class="math">suma = Σ(1/n) od n=1 do 1,000,000</span></p>
+        
+        <div class="wynik" id="wynik"></div>
+        <div id="postep"></div>
+    </div>
+
+    <script>
+        
+        var suma_nik = 0;
+        var i_nik = 1;
+        var max_nik = 1000000;
+        var aktualizacjaCo = 10000; 
+        
+        function obliczSume() {
+            var start = performance.now();
+            var postepElement = document.getElementById("postep");
+            
+            
+            function obliczCzesc() {
+                var koniec = Math.min(i_nik + 10000 - 1, max_nik);
+                
+                for (; i_nik <= koniec; i_nik++) {
+                    suma_nik += 1 / i_nik;
+                }
+                
+               
+                if (i_nik % aktualizacjaCo === 0 || i_nik > max_nik) {
+                    postepElement.innerHTML = "Obliczanie... " + ((i_nik / max_nik * 100).toFixed(2)) + "%";
+                }
+                
+                
+                if (i_nik <= max_nik) {
+                    setTimeout(obliczCzesc, 0);
+                } else {
+                    var end = performance.now();
+                    var czas = ((end - start) / 1000).toFixed(2);
+                    
+                    document.getElementById("wynik").innerHTML = 
+                        `<p>Suma szeregu harmonicznego od 1 do 1,000,000 wynosi:</p>
+                         <p class="math">${suma_nik.toFixed(15)}</p>
+                         <p>Czas obliczeń: ${czas} sekund</p>`;
+                    postepElement.innerHTML = "Obliczenia zakończone!";
+                }
+            }
+            
+            obliczCzesc();
+        }
+        
+        
+        window.onload = function() {
+            obliczSume();
+        };
+    </script>
+</body>
+</html>
+
+ </textarea>
+</form>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

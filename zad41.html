@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodzaje pętli w programowaniu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .loop-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .loop {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 30%;
+            min-width: 300px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .syntax {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .flowchart {
+            text-align: center;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rodzaje pętli w programowaniu</h1>
+    
+    <div class="loop-container">
+        <!-- Pętla for -->
+        <div class="loop">
+            <h2>Pętla for</h2>
+            
+            <h3>Konstrukcja:</h3>
+            <div class="syntax">
+for(inicjalizacja; warunek; inkrementacja) {
+    // blok kodu do wykonania
+}
+            </div>
+            
+            <h3>Opis:</h3>
+            <p>
+                Pętla <strong>for</strong> jest używana, gdy znamy dokładną liczbę iteracji, które chcemy wykonać.
+                Składa się z trzech części: inicjalizacji (ustawienie początkowych wartości), warunku (sprawdzanego przed każdą iteracją)
+                oraz wyrażenia modyfikującego (zwykle inkrementacja lub dekrementacja licznika).
+            </p>
+            
+            <h3>Schemat blokowy:</h3>
+            <div class="flowchart">
+                Inicjalizacja → Warunek → (Tak) → Blok kodu → Modyfikacja<br>
+                ↓ (Nie)<br>
+                Wyjście z pętli
+            </div>
+        </div>
+        
+        <!-- Pętla while -->
+        <div class="loop">
+            <h2>Pętla while (z kontrolowanym wejściem)</h2>
+            
+            <h3>Konstrukcja:</h3>
+            <div class="syntax">
+while(warunek) {
+    // blok kodu do wykonania
+}
+            </div>
+            
+            <h3>Opis:</h3>
+            <p>
+                Pętla <strong>while</strong> wykonuje blok kodu tak długo, jak spełniony jest określony warunek.
+                Warunek jest sprawdzany <strong>przed</strong> każdą iteracją (kontrolowane wejście).
+                Jeśli warunek jest fałszywy już na początku, pętla nie wykona się ani razu.
+            </p>
+            
+            <h3>Schemat blokowy:</h3>
+            <div class="flowchart">
+                Warunek → (Tak) → Blok kodu<br>
+                ↓ (Nie)<br>
+                Wyjście z pętli
+            </div>
+        </div>
+        
+        <!-- Pętla do while -->
+        <div class="loop">
+            <h2>Pętla do while (z kontrolowanym wyjściem)</h2>
+            
+            <h3>Konstrukcja:</h3>
+            <div class="syntax">
+do {
+    // blok kodu do wykonania
+} while(warunek);
+            </div>
+            
+            <h3>Opis:</h3>
+            <p>
+                Pętla <strong>do while</strong> podobna jest do pętli while, ale z kluczową różnicą - warunek jest sprawdzany
+                <strong>po</strong> wykonaniu bloku kodu (kontrolowane wyjście). Oznacza to, że pętla zawsze wykona się przynajmniej raz,
+                nawet jeśli warunek jest fałszywy już na początku.
+            </p>
+            
+            <h3>Schemat blokowy:</h3>
+            <div class="flowchart">
+                Blok kodu → Warunek → (Tak) → Powrót<br>
+                ↓ (Nie)<br>
+                Wyjście z pętli
+            </div>
+        </div>
+    </div>
+</body>
+</html>

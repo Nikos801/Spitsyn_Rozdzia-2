@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 52 - Prostokąt z gwiazdek</title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 20px;
+            line-height: 1;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        #prostokat {
+            white-space: pre;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zadanie 52 - Prostokąt z gwiazdek</h1>
+    <p>Imię: Nikita (6 liter), Nazwisko: Spitsyn (7 liter)</p>
+    
+    <div id="prostokat"></div>
+    
+    <script>
+       
+        var imie = "Nikita";    // 6 liter
+        var nazwisko = "Spitsyn"; // 7 liter
+        
+        
+        var a_nik = (nazwisko.length % 4) + 5;  // 7%4=3 → 3+5=8
+        var b_nik = (imie.length % 6) + 20;     // 6%6=0 → 0+20=20
+        
+        
+        var wynik = "";
+        
+       
+        for (var i_nik = 0; i_nik < b_nik; i_nik++) {
+            wynik += "*";
+        }
+        wynik += "\n";
+        
+       
+        for (var j_nik = 0; j_nik < a_nik - 2; j_nik++) {
+            wynik += "*";
+            for (var k_nik = 0; k_nik < b_nik - 2; k_nik++) {
+                wynik += " ";
+            }
+            wynik += "*\n";
+        }
+        
+        
+        for (var l_nik = 0; l_nik < b_nik; l_nik++) {
+            wynik += "*";
+        }
+        
+        
+        document.getElementById("prostokat").textContent = wynik;
+    </script>
+    
+    <p>Wymiary prostokąta: a_nik = ${a_nik}, b_nik = ${b_nik}</p>
+    <script>
+        document.write(`<p>Wymiary prostokąta: a_nik = ${a_nik}, b_nik = ${b_nik}</p>`);
+    </script>
+</body>
+</html>
